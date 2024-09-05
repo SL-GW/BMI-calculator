@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>BMI Calculator</title>
+  </head>
+  <style>
+    body {
+      background: radial-gradient(
+        circle at 0.1% 99.8%,
+        rgb(0, 164, 189) 0%,
+        rgb(0, 189, 165) 90%
+      );
+      color: #142d4c;
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+  <body>
+    <h1>BMI Calculator</h1>
+    <h2>
+      Body mass index (BMI) is a tool that healthcare providers use to estimate
+      the amount of body fat by using your height and weight measurements. It
+      can help assess risk factors for certain health conditions. The BMI is not
+      always an accurate representation of body fatness.
+    </h2>
+    <form>
+      <div>Weight in kilograms</div>
+      <input id="weight-input" type="text" placeholder="Enter weight in kg" />
+      <div>Height in centimetre</div>
+      <input id="height-input" type="text" placeholder="Enter height in cm" />
+      <div>
+        <input id="button-input" type="submit" value="Calculate BMI" />
+      </div>
+    </form>
+    <h3>Your BMI is: <span id="calculatedBmi"></span></h3>
+    <ul>
+      <li><span>Underweight:</span>Less than 18.5</li>
+      <li><span>Optimum range:</span>18.5 to 24.9</li>
+      <li><span>Overweight:</span>25 to 29.9</li>
+      <li><span>Class I obesity:</span>30 to 34.9</li>
+      <li><span>Class II obesity:</span>35 to 39.9</li>
+      <li><span>Class III obesity:</span>More than 40</li>
+    </ul>
+    <script>
+      function calculateBmi() {
+        let weight = document.getElementById("weight-input").value;
+        let height = document.getElementById("height-input").value;
+        let bmi = weight / (height * height);
+
+        if (bmi <= 18.5) {
+          alert("underweight");
+        }
+      }
+    </script>
+  </body>
+</html>
