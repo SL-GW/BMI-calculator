@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
     <title>BMI Calculator</title>
   </head>
   <style>
@@ -35,32 +36,130 @@
       text-align: center;
       margin: 0px 300px 20px 300px;
     }
+
+    h3 {
+      font-size: 20px;
+      margin: 50px 0px 0px 0px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 35px;
+      padding: 0;
+      text-align: center;
+    }
+
+    li {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .box {
+      background-color: #d59bf6;
+
+      padding: 30px 0px;
+      margin-left: 250px;
+      margin-right: 250px;
+      border-radius: 6px;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: center;
+    }
+
+    .column {
+      margin: 0px 20px;
+    }
+
+    .title {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .input-info {
+      font-size: 20px;
+      height: 30px;
+      border-radius: 4px;
+      border: solid 2px #57385c;
+    }
+    .input-button {
+      font-size: 20px;
+      height: 30px;
+      border-radius: 4px;
+      border: solid 2px #57385c;
+      width: 150px;
+      color: #57385c;
+    }
+
+    .input-button:hover {
+      font-weight: 600;
+    }
+
+    .result {
+      font-weight: 600;
+    }
+
+    .classification {
+      font-weight: 500;
+    }
   </style>
   <body>
     <h1>BMI Calculator</h1>
     <h2>
-      Body mass index (BMI) is a tool that healthcare providers use to estimate
-      the amount of body fat by using your height and weight measurements. It
-      can help assess risk factors for certain health conditions. The BMI is not
-      always an accurate representation of body fatness.
+      Body mass index (BMI) is a tool to estimate the amount of body fat by
+      using your height and weight measurements. It can help assess risk factors
+      for certain health conditions. The BMI is not always an accurate
+      representation of body fatness.
     </h2>
-    <form id="bmi-form">
-      <div>Weight in kilograms</div>
-      <input id="weight-input" type="text" placeholder="Enter weight in kg" />
-      <div>Height in centimetre</div>
-      <input id="height-input" type="text" placeholder="Enter height in cm" />
-      <div>
-        <input id="button-input" type="submit" value="Calculate BMI" />
-      </div>
-    </form>
-    <h3>Your BMI is: <span id="calculatedBmi"></span></h3>
+    <div class="box">
+      <form id="bmi-form">
+        <div class="grid">
+          <div class="column">
+            <div class="title">Weight in kilograms</div>
+            <input
+              class="input-info"
+              id="weight-input"
+              type="text"
+              placeholder="Enter weight in kg"
+            />
+          </div>
+          <div class="column">
+            <div class="title">Height in centimetre</div>
+            <input
+              class="input-info"
+              id="height-input"
+              type="text"
+              placeholder="Enter height in cm"
+            />
+          </div>
+          <div class="column">
+            <div>
+              <div class="title">Calculate BMI</div>
+              <input
+                class="input-button"
+                id="button-input"
+                type="submit"
+                value="Calculate"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <h3>Your BMI is: <span class="result" id="calculatedBmi"></span></h3>
+    </div>
     <ul>
-      <li><span>Underweight:</span>Less than 18.5</li>
-      <li><span>Optimum range:</span>18.5 to 24.9</li>
-      <li><span>Overweight:</span>25 to 29.9</li>
-      <li><span>Class I obesity:</span>30 to 34.9</li>
-      <li><span>Class II obesity:</span>35 to 39.9</li>
-      <li><span>Class III obesity:</span>More than 40</li>
+      <li><span class="classification">Underweight:</span> Less than 18.5</li>
+      <li><span class="classification">Optimum range:</span> 18.5 to 24.9</li>
+      <li><span class="classification">Overweight:</span> 25 to 29.9</li>
+      <li><span class="classification">Class I obesity:</span> 30 to 34.9</li>
+      <li><span class="classification">Class II obesity:</span> 35 to 39.9</li>
+      <li>
+        <span class="classification">Class III obesity:</span> More than 40
+      </li>
     </ul>
     <script>
       function calculateBmi(event) {
